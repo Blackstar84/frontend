@@ -1,7 +1,8 @@
 import logo from './logo.svg';
 import './App.css';
-import { BrowserRouter as Router, Route, Redirect} from 'react-router-dom';
+import { BrowserRouter as Router, Route, Redirect, Switch} from 'react-router-dom';
 import Users from './user/pages/Users';
+import NewPlace from './places/pages/NewPlace';
 
 // instalar Router
 // npm install --save react-router-dom@5 --save-exact 
@@ -9,15 +10,23 @@ import Users from './user/pages/Users';
 function App() {
   return (
     <Router>
-      //Ruta que verificara si es / y no tiene nada 
-      <Route path="/" exact>
-        //Carga la página Users
-        <Users />
-      </Route>
+{/*       Metemos dentro de una estructura Switch para que cuando se ejecute alguna de las
+      rutas, deje de ejecutarse las siguientes y no se ejecute el redirect */}
+      <Switch>
+        {/* Ruta que verificara si es / y no tiene nada  */}
+        <Route path="/" exact>
+          {/* //Carga la página Users */}
+          <Users />
+        </Route>
+        <Route path="/places/new">
+          <NewPlace></NewPlace>
+        </Route>
 
-      //Luego de Recorrer todos los Route si no encuentra una ruta que pongamos 
-      // Redireccionará a un path específico
-      <Redirect to="/" ></Redirect>
+        {/* //Luego de Recorrer todos los Route si no encuentra una ruta que pongamos 
+        // Redireccionará a un path específico */}
+        <Redirect to="/" ></Redirect>
+      </Switch>
+      
 
     </Router>
   );
