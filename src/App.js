@@ -3,6 +3,7 @@ import './App.css';
 import { BrowserRouter as Router, Route, Redirect, Switch} from 'react-router-dom';
 import Users from './user/pages/Users';
 import NewPlace from './places/pages/NewPlace';
+import MainNavigation from './shared/components/Navigation/MainNavigation';
 
 // instalar Router
 // npm install --save react-router-dom@5 --save-exact 
@@ -10,8 +11,10 @@ import NewPlace from './places/pages/NewPlace';
 function App() {
   return (
     <Router>
+      <MainNavigation />
 {/*       Metemos dentro de una estructura Switch para que cuando se ejecute alguna de las
       rutas, deje de ejecutarse las siguientes y no se ejecute el redirect */}
+      <main>
       <Switch>
         {/* Ruta que verificara si es / y no tiene nada  */}
         <Route path="/" exact>
@@ -26,6 +29,7 @@ function App() {
         // Redireccionará a un path específico */}
         <Redirect to="/" ></Redirect>
       </Switch>
+      </main>
       
 
     </Router>
