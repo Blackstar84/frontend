@@ -1,15 +1,19 @@
-import React from "react";
-import UsersList from "../components/UsersList";
+import React from 'react';
 
-const Users = () =>{
-    const USERS = [
-        {id: 'u1', name: 'Max Schwarz',
-         image: 'https://www.visittheusa.co/sites/default/files/styles/16_9_1280x720/public/2016-10/0%20HERO_HoustonTX_GettyImages-532390052_0.jpg?h=c5520b1b&itok=QYZzO_gS',
-          places: 3 }
-        ];
-    return(
-        <UsersList items={USERS} />
-    )
-}
+import UsersList from '../components/UsersList';
+
+const Users = () => {
+  const USERS = [
+    {
+      id: 'u1',
+      name: 'Max Schwarz',
+      image:
+        'https://images.pexels.com/photos/839011/pexels-photo-839011.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260',
+      places: 3
+    }
+  ];
+
+  return <UsersList items={USERS} />;
+};
 
 export default Users;
